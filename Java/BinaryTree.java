@@ -64,6 +64,40 @@ public class BinaryTree {
         return false;
     }
 
+    private void preorderTraversal(TreeNode root)
+    {
+        if(root == null)
+            return;
+        preorderTraversal(root.left);
+        System.out.print(root.val + " -> ");
+        preorderTraversal(root.right);
+    }
+
+    private void inorderTraversal(TreeNode root)
+    {
+        if(root == null)
+            return;
+        System.out.print(root.val + " -> ");
+        inorderTraversal(root.left);
+        inorderTraversal(root.right);
+    }
+
+    private void postorderTraversal(TreeNode root)
+    {
+        if(root == null)
+            return;
+        postorderTraversal(root.left);
+        postorderTraversal(root.right);      
+        System.out.print(root.val + " -> ");
+    }
+
+    private int getHeightOfTree(TreeNode node) {
+        if(node == null) {
+            return 0;
+        }
+        return Math.max(getHeightOfTree(node.left), getHeightOfTree(node.right)) +1;
+    }
+
     public void dfsByStack(TreeNode node) {
         if (node == null) {
             return;
@@ -103,6 +137,14 @@ public class BinaryTree {
         tree.bfs(tree.root);
         System.err.println();
         tree.findPathToANode(9, tree.root);
+        System.err.println();
+        tree.preorderTraversal(tree.root);
+        System.err.println();
+        tree.inorderTraversal(tree.root);
+        System.err.println();
+        tree.postorderTraversal(tree.root);
+        System.err.println();
+        System.err.println(tree.getHeightOfTree(tree.root));
     }
 
     //         1
