@@ -10,10 +10,12 @@ package Java.DesignPattern.FileSystemPackage;
  */
 public class TextFile extends File {
     private String content;
+    private int size;
 
-    public TextFile(String name, int size, String content) {
-        super(name, size);
+    public TextFile(String name, String content) {
+        super(name);
         this.content = content;
+        this.size = this.content.length()*2*1024;
     }
 
     public void open() {
@@ -27,5 +29,9 @@ public class TextFile extends File {
 
     public String getContent() {
         return content;
+    }
+
+    public int getSize() {
+        return size;
     }
 }

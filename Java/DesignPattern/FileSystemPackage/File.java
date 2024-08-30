@@ -1,11 +1,18 @@
 package Java.DesignPattern.FileSystemPackage;
+
+import java.time.LocalDateTime;
+
 public abstract class File {
     protected String name;
-    protected int size;
+    protected LocalDateTime createdTime;
+    protected LocalDateTime modifiedTime;
+    protected LocalDateTime accessedTime;
 
-    public File(String name, int size) {
+    public File(String name) {
         this.name = name;
-        this.size = size;
+        this.createdTime = LocalDateTime.now();
+        this.modifiedTime = this.createdTime;
+        this.accessedTime = this.createdTime;
     }
 
     public abstract void open();
@@ -15,7 +22,26 @@ public abstract class File {
         return name;
     }
 
-    public int getSize() {
-        return size;
+
+    public void updateAccessedTime() {
+        this.accessedTime = LocalDateTime.now();
     }
+
+    public void updateModifiedTime() {
+        this.modifiedTime = LocalDateTime.now();
+    }
+
+    public LocalDateTime getCreatedTime() {
+        return createdTime;
+    }
+
+    public LocalDateTime getModifiedTime() {
+        return modifiedTime;
+    }
+
+    public LocalDateTime getAccessedTime() {
+        return accessedTime;
+    }
+
+    protected abstract int getSize();
 }

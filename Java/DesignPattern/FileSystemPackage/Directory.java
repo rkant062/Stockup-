@@ -6,7 +6,7 @@ public class Directory extends File {
     private List<File> children = new ArrayList<>();
 
     public Directory(String name) {
-        super(name, 0);
+        super(name);
     }
 
     public void addFile(File file) {
@@ -25,5 +25,14 @@ public class Directory extends File {
     @Override
     public void close() {
         System.out.println("Closing directory: " + name);
+    }
+
+    @Override
+    protected int getSize() {
+        int totalSize = 0;
+        for (File file : children) {
+            totalSize += file.getSize();  // Recursively sum the sizes of files and subdirectories
+        }
+        return totalSize;
     }
 }

@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 public class LoggerObserver implements FileSystemObserver {
     @Override
-    public void update(String message, Status status) {
+    public void update(String message, Status status, long timetaken) {
         // Get the current date and time
         LocalDateTime now = LocalDateTime.now();
         // Format the date and time in a readable format
@@ -12,6 +12,6 @@ public class LoggerObserver implements FileSystemObserver {
         String formattedDateTime = "[" +  now.format(formatter) + "]";
 
         // Log the message with the current time and status
-        System.out.println(formattedDateTime + " Logger: " + status + " " + message);
+        System.out.println(formattedDateTime + " Logger: " + status + " " + " [Time taken: " + timetaken + " ms]" + message);
     }
 }

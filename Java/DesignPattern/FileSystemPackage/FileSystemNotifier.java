@@ -14,9 +14,9 @@ public class FileSystemNotifier {
         observers.remove(observer);
     }
 
-    public void notifyObservers(String message) {
+    public void notifyObservers(String message, Status status, long time ) {
         for (FileSystemObserver observer : observers) {
-            observer.update(message, Status.INFO);
+            observer.update(message, status, time);
         }
     }
 }
