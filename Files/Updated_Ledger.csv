@@ -1,0 +1,5 @@
+particulars,posting_date,cost_center,voucher_type,debit,credit,net_balance,Period,Transaction Date,Company,Category
+DP Charges for sale of BURGERKING on 2020-12-17,2020-12-17,NSE-EQ - Z,Journal Entry,15.93,0.0,4043.488849,,2020-12-17,BURGERKING,Sale
+DP Charges for sale of BURGERKING on 2020-12-22,2020-12-22,NSE-EQ - Z,Journal Entry,15.93,0.0,4027.558849,,2020-12-22,BURGERKING,Sale
+DP Charges for sale of TATAMOTORS on 2021-02-10,2021-02-10,NSE-EQ - Z,Journal Entry,15.93,0.0,7816.550529,,2021-02-10,TATAMOTORS,Sale
+DP Charges for sale of TATAMOTORS on 2021-02-19,2021-02-19,NSE-EQ - Z,Journal Entry,15.93,0.0,-15.487373,,2021-02-19,TATAMOTORS,Sale
