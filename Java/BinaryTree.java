@@ -14,6 +14,7 @@ class TreeNode {
 }
 
 public class BinaryTree {
+     
     TreeNode root;
     Queue<TreeNode> queue = new LinkedList<>();
 
@@ -45,6 +46,22 @@ public class BinaryTree {
             if(temp.left != null)  queue.add(temp.left); 
             if(temp.right != null) queue.add(temp.right);
         }      
+    }
+
+    private boolean findPathToANode(int val, TreeNode root)
+    {
+        if(root == null)
+            return false;
+        if(root.val == val) {
+            System.out.print("Found");
+            return true;
+        }
+        else {
+            System.out.print(root.val+ " -> ");
+            if(findPathToANode(val, root.left) || findPathToANode(val, root.right))
+                return true;
+        }
+        return false;
     }
 
     public void dfsByStack(TreeNode node) {
@@ -84,6 +101,8 @@ public class BinaryTree {
         tree.dfsByStack(tree.root);
         System.out.println("\n\nBFS Traversal of the tree:");
         tree.bfs(tree.root);
+        System.err.println();
+        tree.findPathToANode(9, tree.root);
     }
 
     //         1
