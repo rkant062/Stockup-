@@ -4,6 +4,9 @@ import sys
 
 def automate_git_commands(commit_message):
     try:
+        subprocess.run(["git", "status"], check=True)
+        print("Checking status")
+
         subprocess.run(["git", "add", "."], check=True)
         print("Files added to staging area.")
 
