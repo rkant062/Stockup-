@@ -86,7 +86,9 @@ public class TreeLCA {
         root.right.right = new TreeNode(7);
 
         List<Integer> path = getPathBetweenNodes(root, 4, 7);
+        TreeNode lca = findLCA(root, 6,7);
 
         System.out.println("Path between 4 and 7: " + path);
+        System.out.println(lca.value);
     }
 }
