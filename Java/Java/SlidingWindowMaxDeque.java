@@ -6,8 +6,8 @@ import java.util.Deque;
 public class SlidingWindowMaxDeque {
     public static void main(String[] args) {
         int[] nums = {1,2,0,3,4,5,6};
-        for(Integer i : maxSlidingWindow(nums, 2)){
-                System.out.print(i);
+        for(int i : maxSlidingWindow(nums, 3)){
+                System.out.println(i);
         }
     }
     
