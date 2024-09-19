@@ -39,7 +39,7 @@ public class DiameterBinaryTree {
 
     static class TreeNode{
         int val;
-        TreeNode left;
+        TreeNode left; 
         TreeNode right;
 
         TreeNode(int val){
